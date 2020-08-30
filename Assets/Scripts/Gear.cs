@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class Gear : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    Rigidbody rb;
+
+    public bool isRotating;
+
+    private void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+
+
+    private void FixedUpdate()
     {
+        if (isRotating)
+        {
+            rb.AddTorque(new Vector3(0, 0, 2), ForceMode.Impulse);
+        }
         
     }
 }
