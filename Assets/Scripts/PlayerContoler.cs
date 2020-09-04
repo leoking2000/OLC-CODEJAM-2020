@@ -30,6 +30,16 @@ public class PlayerContoler : MonoBehaviour
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         jumpKeyPress = Input.GetAxisRaw("Jump");
+
+        if(horizontalInput > 0)
+        {
+            transform.rotation = new Quaternion(0, 0, 0, 0);
+        }
+        else if (horizontalInput < 0 )
+        {
+            transform.rotation = new Quaternion(0, 180, 0, 0);
+        }
+
     }
 
     private void FixedUpdate()
@@ -50,7 +60,6 @@ public class PlayerContoler : MonoBehaviour
         {
             jumpBuffer = true;
         }
-
 
         if (rb.velocity.y > yVelLimit)
         {
