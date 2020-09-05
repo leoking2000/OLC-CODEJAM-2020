@@ -73,14 +73,6 @@ public class PlayerContoler : MonoBehaviour
         {
             rb.AddForce(Vector3.up * Physics.gravity.y * (fallMultiplier - 1), ForceMode.VelocityChange);
         }
-
-
-        // checkpoint
-        if (transform.position.y < -10)
-        {
-            transform.position = new Vector3(-111, -2.5f, 0);
-        }
-
     }
 
 
