@@ -21,9 +21,12 @@ public class PlayerContoler : MonoBehaviour
 
     State state = State.Grounded;
 
+    PlayerAudio audio;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        audio = GetComponent<PlayerAudio>();
     }
 
     private void Update()
@@ -80,6 +83,7 @@ public class PlayerContoler : MonoBehaviour
     private void Jump()
     {
         rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.VelocityChange);
+        audio.PlayJump();
     }
 
 

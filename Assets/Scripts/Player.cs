@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
         if(transform.position.y < -10)
         {
             transform.position = Start.position;
+            GetComponent<PlayerAudio>().PlayDie();
         }
     }
 
